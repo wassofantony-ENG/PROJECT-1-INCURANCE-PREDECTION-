@@ -1,0 +1,11 @@
+joblib
+uvicorn
+fastapi[all]
+pydantic
+scikit-learn
+xgboost
+psycopg2
+sqlalchemy
+python-jose
+pwdlib
+python-dotenv

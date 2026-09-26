@@ -1,0 +1,35 @@
+http://127.0.0.1:8000
+
+###
+POST http://127.0.0.1:8000/users/login
+Content-Type: application/json
+
+{
+    "email": "me@example.com",
+    "password": "secret123"
+}
+
+###
+POST http://127.0.0.1:8000/users/register
+Content-Type: application/json
+
+{
+    "username": "myuser",
+    "email": "me@example.com",
+    "password": "secret123"
+}
+
+###
+GET http://127.0.0.1:8000/users/check?id=21
+
+###
+PUT http://127.0.0.1:8000/users/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdHJpYXNkYXNkbmciLCJleHAiOjE3Nzc4MzA2NjR9.hQWA6Z_63clmuhJWKX4QmX791_K0y1DWhh9PqtEhpWY
+
+{
+    "username":"striasdasdng"
+}
+###
+DELETE http://127.0.0.1:8000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdHJpYXNkYXNkbmciLCJleHAiOjE3Nzc4MzA4OTZ9.7hP59Ql-2rXxBDBa4mu9CAY-A5fQsPJ5ViIFLSebAR4

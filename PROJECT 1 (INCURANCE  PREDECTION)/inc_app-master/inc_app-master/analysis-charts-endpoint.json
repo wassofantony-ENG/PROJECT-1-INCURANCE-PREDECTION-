@@ -1,0 +1,58 @@
+{
+  "endpoint": "GET /users/analysis/charts",
+  "auth": "Bearer token (same as existing endpoints)",
+  "description": "Returns chart-ready aggregated data for the authenticated user's clients.",
+  "source_fields": [
+    "id", "user_id", "email", "customers_name", "age", "gender",
+    "bmi", "bloodpressure", "diabetic", "children", "smoker",
+    "region", "AI_Prediction", "isDone", "final_cost"
+  ],
+  "response": {
+    "costByAgeGroup": [
+      { "group": "18-25", "avg_cost": 3200, "count": 12 },
+      { "group": "26-35", "avg_cost": 5400, "count": 28 }
+    ],
+    "costByRegion": [
+      { "region": 0, "avg_cost": 4100, "count": 15 },
+      { "region": 1, "avg_cost": 6300, "count": 22 }
+    ],
+    "smokerBreakdown": [
+      { "label": "Non-smoker", "count": 45, "avg_cost": 3800 },
+      { "label": "Smoker", "count": 18, "avg_cost": 9200 }
+    ],
+    "genderBreakdown": [
+      { "label": "Female", "count": 30, "avg_cost": 5100 },
+      { "label": "Male", "count": 33, "avg_cost": 5600 }
+    ],
+    "diabeticBreakdown": [
+      { "label": "Non-diabetic", "count": 50, "avg_cost": 4400 },
+      { "label": "Diabetic", "count": 13, "avg_cost": 8700 }
+    ],
+    "childrenBreakdown": [
+      { "children": 0, "count": 25, "avg_cost": 4800 },
+      { "children": 1, "count": 18, "avg_cost": 5300 },
+      { "children": 2, "count": 8, "avg_cost": 6100 },
+      { "children": "3+", "count": 5, "avg_cost": 7200 }
+    ],
+    "bmiDistribution": [
+      { "range": "Underweight (<18.5)", "count": 3, "avg_cost": 5100 },
+      { "range": "Normal (18.5-25)", "count": 28, "avg_cost": 4700 },
+      { "range": "Overweight (25-30)", "count": 20, "avg_cost": 5800 },
+      { "range": "Obese (>30)", "count": 12, "avg_cost": 7900 }
+    ],
+    "predictionVsActual": [
+      { "predicted": 4500, "actual": 4300 },
+      { "predicted": 7200, "actual": 7000 }
+    ],
+    "bloodPressureRisk": [
+      { "range": "Normal (<120)", "count": 25, "avg_cost": 4200 },
+      { "range": "Elevated (120-129)", "count": 15, "avg_cost": 5500 },
+      { "range": "High (>=130)", "count": 20, "avg_cost": 7100 }
+    ]
+  },
+  "rules": {
+    "predictionVsActual": "Only includes clients where isDone === true. Use AI_Prediction as predicted, final_cost as actual.",
+    "all_other_breakdowns": "Use every client belonging to the user.",
+    "existing_endpoint": "Keep GET /users/analysis untouched."
+  }
+}

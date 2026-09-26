@@ -1,0 +1,59 @@
+http://127.0.0.1:8000
+
+###
+POST http://127.0.0.1:8000/clients/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJteXVzZXIiLCJleHAiOjE3NzgzNTU2OTh9.xFnJVx8BDUSHeW6cUv9ww4X54Clu7Ex8hrO0rZegG_4
+
+{
+    "user_id": 1,
+    "email":"raghd",
+    "customers_name": "test",
+    "age": 0,
+    "gender": 0,
+    "bmi": 0,
+    "bloodpressure": 0,
+    "diabetic": 0,
+    "children": 0,
+    "smoker": 0,
+    "region": 0,
+    "AI_Prediction": 0,
+    "isDone":"True",
+    "final_cost": 0
+}
+###
+GET http://127.0.0.1:8000/clients/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWdoZCIsImV4cCI6MTc3ODM1Mzc0M30.pCuksI5LQLEQPVCiD8tOzUBaICtRA0CFjzOoO21F6_0
+###
+GET http://127.0.0.1:8000/clients/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJteXVzZXIiLCJleHAiOjE3NzgzNTc3MTh9.skFoVaHEpM_yxTUm9E9qi1EvRYppN8HRDVfRl_yiftI
+
+###
+PUT http://127.0.0.1:8000/clients/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJteXVzZXIiLCJleHAiOjE3NzgzNTU2OTh9.xFnJVx8BDUSHeW6cUv9ww4X54Clu7Ex8hrO0rZegG_4
+
+{
+    "user_id": 1,
+    "email":"raghd",
+    "customers_name": "test",
+    "age": 0,
+    "gender": 0,
+    "bmi": 0,
+    "bloodpressure": 0,
+    "diabetic": 0,
+    "children": 0,
+    "smoker": 0,
+    "region": 0,
+    "AI_Prediction": 0,
+    "isDone":"True",
+    "final_cost": 0
+}
+###
+DELETE http://127.0.0.1:8000/clients/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJyYWdoZCIsImV4cCI6MTc3ODM1Mzc0M30.pCuksI5LQLEQPVCiD8tOzUBaICtRA0CFjzOoO21F6_0
+ 
+###
+PUT http://127.0.0.1:8000/clients/Done/3?doneStatus=false
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJteXVzZXIiLCJleHAiOjE3NzgzNTc3MTh9.skFoVaHEpM_yxTUm9E9qi1EvRYppN8HRDVfRl_yiftI
+
